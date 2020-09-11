@@ -2,10 +2,6 @@ import requests, re, sys
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-#ur credentials here :)
-usr = "15510"
-pwd = "password123"
-
 class BotPresensi():
 	'''
 	..............................
