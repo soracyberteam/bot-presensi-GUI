@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="tk.Toplevel" id="mainwindow">
+    <property name="container">true</property>
+    <property name="cursor">tcross</property>
+    <property name="geometry">320x480</property>
+    <property name="height">200</property>
+    <property name="overrideredirect">True</property>
+    <property name="resizable">none</property>
+    <property name="title" translatable="yes">FilthyRoot</property>
+    <property name="width">200</property>
+    <child>
+      <object class="tk.Frame" id="frame_4">
+        <property name="background">#000000</property>
+        <property name="container">true</property>
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <bind sequence="&lt;B1-Motion&gt;" handler="do_move" add="" />
+        <bind sequence="&lt;ButtonPress-1&gt;" handler="start_move" add="" />
+        <bind sequence="&lt;ButtonRelease-1&gt;" handler="stop_move" add="" />
+        <bind sequence="&lt;Map&gt;" handler="frame_mapped" add="" />
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="stop_button">
+            <property name="activebackground">#a5095a</property>
+            <property name="activeforeground">#ffffff</property>
+            <property name="background">#b90746</property>
+            <property name="command">on_stop_click</property>
+            <property name="cursor">tcross</property>
+            <property name="foreground">#ffffff</property>
+            <property name="highlightthickness">0</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">Stop Bot</property>
+            <layout manager="pack">
+              <property name="fill">both</property>
+              <property name="propagate">True</property>
+              <property name="side">bottom</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Canvas" id="canvas_1">
+            <property name="background">#000000</property>
+            <property name="borderwidth">0</property>
+            <property name="height">72</property>
+            <property name="highlightthickness">0</property>
+            <property name="relief">flat</property>
+            <property name="width">72</property>
+            <bind sequence="&lt;B1-Motion&gt;" handler="do_move" add="" />
+            <bind sequence="&lt;ButtonPress-1&gt;" handler="start_move" add="" />
+            <bind sequence="&lt;ButtonRelease-1&gt;" handler="stop_move" add="" />
+            <layout manager="pack">
+              <property name="anchor">nw</property>
+              <property name="propagate">True</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_1">
+            <property name="background">#000000</property>
+            <property name="foreground">#ffffff</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">version : 1.0</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.79</property>
+              <property name="rely">0.84</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="info_button">
+            <property name="activebackground">#a5095a</property>
+            <property name="activeforeground">#ffffff</property>
+            <property name="background">#b90746</property>
+            <property name="command">on_info_button</property>
+            <property name="cursor">tcross</property>
+            <property name="foreground">#ffffff</property>
+            <property name="highlightthickness">0</property>
+            <property name="justify">left</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">About</property>
+            <layout manager="place">
+              <property name="anchor">n</property>
+              <property name="relheight">0.05</property>
+              <property name="relx">0.79</property>
+              <property name="rely">0.01</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_4">
+            <property name="background">#000000</property>
+            <property name="font">{Unispace} 12 {italic}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="justify">left</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">{ Moodle Bot }</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.24</property>
+              <property name="rely">0.03</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="start_button">
+            <property name="activebackground">#a5095a</property>
+            <property name="activeforeground">#ffffff</property>
+            <property name="background">#b90746</property>
+            <property name="command">on_start_click</property>
+            <property name="cursor">tcross</property>
+            <property name="foreground">#ffffff</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">Start Bot</property>
+            <layout manager="pack">
+              <property name="expand">false</property>
+              <property name="fill">both</property>
+              <property name="pady">2</property>
+              <property name="propagate">True</property>
+              <property name="side">bottom</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="close">
+            <property name="activebackground">#a5095a</property>
+            <property name="activeforeground">#ffffff</property>
+            <property name="anchor">n</property>
+            <property name="background">#b90746</property>
+            <property name="command">on_quit_click</property>
+            <property name="foreground">#ffffff</property>
+            <property name="justify">left</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">X</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relheight">0.05</property>
+              <property name="relwidth">0.05</property>
+              <property name="relx">0.93</property>
+              <property name="rely">0.01</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="e_username">
+            <property name="background">#b90746</property>
+            <property name="font">{Unispace} 14 {italic}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="justify">left</property>
+            <property name="relief">flat</property>
+            <property name="state">normal</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">username</property>
+            <property name="textvariable">string:eusername</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.12</property>
+              <property name="rely">0.4</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="e_password">
+            <property name="background">#b90746</property>
+            <property name="font">{Unispace} 14 {italic}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="justify">left</property>
+            <property name="relief">flat</property>
+            <property name="show">•</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">password</property>
+            <property name="textvariable">string:epassword</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.12</property>
+              <property name="rely">0.5</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_3">
+            <property name="background">#000000</property>
+            <property name="font">{Unispace} 10 {italic}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="text" translatable="yes">set_me
+</property>
+            <bind sequence="&lt;B1-Motion&gt;" handler="do_move" add="" />
+            <bind sequence="&lt;ButtonPress-1&gt;" handler="start_move" add="" />
+            <bind sequence="&lt;ButtonRelease-1&gt;" handler="stop_move" add="" />
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relheight">0.2</property>
+              <property name="relwidth">1</property>
+              <property name="rely">0.6</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_1_2">
+            <property name="background">#000000</property>
+            <property name="font">{unispace} 11 {italic}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="text" translatable="yes">Login</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.43</property>
+              <property name="rely">0.2</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="button_1">
+            <property name="activebackground">#a5095a</property>
+            <property name="activeforeground">#ffffff</property>
+            <property name="background">#b90746</property>
+            <property name="command">do_minimize</property>
+            <property name="foreground">#ffffff</property>
+            <property name="highlightthickness">0</property>
+            <property name="relief">flat</property>
+            <property name="text" translatable="yes">_</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relheight">0.05</property>
+              <property name="relwidth">0.05</property>
+              <property name="relx">0.87</property>
+              <property name="rely">0.01</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
